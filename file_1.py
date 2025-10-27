@@ -1,1 +1,1 @@
-print("Addes via remotely via Github")
+print("Added via remotely via Github")
