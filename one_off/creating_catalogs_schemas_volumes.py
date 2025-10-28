@@ -1,5 +1,5 @@
 # Databricks notebook source
-spark.sql("create catalog if not exists nyctaxi managed location 'abfss://unity-catalog-storage@dbstoragemaxs36v5rfmt2.dfs.core.windows.net/2175295891068395'")
+spark.sql("create catalog if not exists nyctaxi managed location 'abfss://unity-catalog-storage@dbstorageuhw5o2avppt6c.dfs.core.windows.net/776520650149584'")
 
 # COMMAND ----------
 

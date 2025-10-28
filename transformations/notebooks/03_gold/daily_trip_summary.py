@@ -41,10 +41,3 @@ dailySummaryDF = (
 
 # Write into gold layer
 dailySummaryDF.write.mode('append').option('mergeSchema','true').saveAsTable('nyctaxi.`03_gold`.daily_trip_summary')
-
-# COMMAND ----------
-
-
-
-# COMMAND ----------
-
