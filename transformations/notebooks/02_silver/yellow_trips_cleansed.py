@@ -2,6 +2,16 @@
 import pyspark.sql.functions as F
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
+import os
+import sys
+
+# Go two levels to reach the project root
+project_root = os.path.abspath(os.path.join(os.getcwd(), "../.."))
+
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
+from modules.transformation.metadata import add_processed_timestamp
 
 # COMMAND ----------
 
@@ -192,7 +202,7 @@ yellow_trips_cleansed_df = (
         yelPaymentTypeDF.congestion_surcharge,
         yelPaymentTypeDF.Airport_fee.alias('airport_fee'),
         yelPaymentTypeDF.cbd_congestion_fee,
-        F.current_timestamp().alias('processed_timestamp')
+        add_processed_timestamp(yelPaymentTypeDF)
         )
     )
 

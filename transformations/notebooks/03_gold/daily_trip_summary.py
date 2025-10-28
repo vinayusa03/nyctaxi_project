@@ -23,7 +23,7 @@ display(yelEnrichedDF.limit(2))
 # COMMAND ----------
 
  # Lets calculate daily summary 
- dailySummaryDF = (
+dailySummaryDF = (
      yelEnrichedDF.groupBy(F.col('tpep_pickup_datetime').cast('date').alias('pickup_date'))
      .agg(
          F.count('*').alias('total_trips'),
