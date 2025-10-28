@@ -7,7 +7,7 @@ from dateutil.relativedelta import relativedelta
 import sys
 
 # Go two levels to reach the project root
-project_root =  os.path.abspath(os.path.join(os.getcwd(), "../.."))
+project_root =  os.path.abspath(os.path.join(os.getcwd(), "../../.."))
 
 if project_root not in sys.path:
     sys.path.append(project_root)

@@ -6,7 +6,7 @@ import os
 import sys
 
 # Go two levels to reach the project root
-project_root = os.path.abspath(os.path.join(os.getcwd(), "../.."))
+project_root = os.path.abspath(os.path.join(os.getcwd(), "../../.."))
 
 if project_root not in sys.path:
     sys.path.append(project_root)
@@ -202,7 +202,7 @@ yellow_trips_cleansed_df = (
         yelPaymentTypeDF.congestion_surcharge,
         yelPaymentTypeDF.Airport_fee.alias('airport_fee'),
         yelPaymentTypeDF.cbd_congestion_fee,
-        add_processed_timestamp(yelPaymentTypeDF)
+        F.current_timestamp().alias('processed_timestamp')
         )
     )
 

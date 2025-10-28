@@ -4,7 +4,7 @@ from pyspark.sql.functions import datediff
 import os
 import sys
 
-project_root = os.path.abspath(os.path.join(os.getcwd(), "../.."))
+project_root = os.path.abspath(os.path.join(os.getcwd(), "../../.."))
 
 if project_root not in sys.path:
     sys.path.append(project_root)
@@ -83,6 +83,7 @@ yelJoinedDoBougZoneDF = fetch_brough_zone(yelJoinedPuBougZoneDF, taxiZoneLkpDF, 
 yelJoinedPuBougZoneDF.explain(mode='extended')
 
 # COMMAND ----------
+
 # Lets add processed_timestamp using udf
 add_processed_timestamp(yelJoinedDoBougZoneDF)
 
@@ -96,7 +97,3 @@ add_processed_timestamp(yelJoinedDoBougZoneDF)
 
 yelJoinedDoBougZoneDF.repartition(6).withColumn('process_month', F.lit(current_process_month))\
     .write.mode('append').option('mergeSchema','true').saveAsTable('nyctaxi.`02_silver`.yellow_trips_enriched')
-
-# COMMAND ----------
-
-spark.read.table('nyctaxi.`02_silver`.yellow_trips_enriched').display()
