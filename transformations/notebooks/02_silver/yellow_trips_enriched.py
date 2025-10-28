@@ -1,6 +1,15 @@
 # Databricks notebook source
 import pyspark.sql.functions as F
 from pyspark.sql.functions import datediff
+import os
+import sys
+
+project_root = os.path.abspath(os.path.join(os.getcwd(), "../.."))
+
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
+from modules.transformation.metadata import add_processed_timestamp
 
 # COMMAND ----------
 
@@ -74,9 +83,8 @@ yelJoinedDoBougZoneDF = fetch_brough_zone(yelJoinedPuBougZoneDF, taxiZoneLkpDF, 
 yelJoinedPuBougZoneDF.explain(mode='extended')
 
 # COMMAND ----------
-
-# Lets count after join
-#yelJoinedDoBougZoneDF.count()
+# Lets add processed_timestamp using udf
+add_processed_timestamp(yelJoinedDoBougZoneDF)
 
 # COMMAND ----------
 
