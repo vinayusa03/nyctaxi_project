@@ -68,8 +68,9 @@ nyctaxi_project/
 
 3️⃣ Silver
 - Cleansed Layer:
-  - Applies business logic for vendor, rate_type, and payment_type.
   - Filters records by current processing month.
+  - Applies business logic for vendor, rate_type, and payment_type.
+  
 - Enriched Layer:
   - Joins lookup for pickup/dropoff borough & zone.
   - Derives trip duration and geo information.
