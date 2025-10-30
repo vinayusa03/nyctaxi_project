@@ -144,11 +144,3 @@ Vinay K Ravikumar — Databricks Certified Data Engineer Associate
 View Certification
   - After 10 years of building robust ETL solutions, I’ve moved into data engineering on Databricks, where cloud, Spark, and Delta Lake meet.
   I love solving end-to-end data challenges—from ingestion to analytics—by combining engineering rigor with automation and scalability.
-
-🙏 Acknowledgment
-
-This project was inspired and guided by the Udemy course:
-*“Azure Databricks and Spark SQL (Python)”*
-Your Hands-On Guide to Databricks Data Engineering with PySpark and Spark SQL, including a 4-Part Course Project
-*Bestseller – Created by Malvik Vaghadia*
-
